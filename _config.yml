@@ -1,4 +1,5 @@
 theme: jekyll-theme-slate
 name: Raymond Lei
+description: Principal software engineer specializing in embedded systems, firmware, and connected devices.
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
