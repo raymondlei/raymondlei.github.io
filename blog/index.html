@@ -1,12 +1,24 @@
 ---
 layout: default
 title: Raymond Lei's Blog
+description: Notes on engineering and building this website.
+nav: blog
 ---
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
-
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
-  
+<header class="page-header">
+  <div class="shell narrow">
+    <p class="eyebrow">Notes</p>
+    <h1>Writing and updates.</h1>
+    <p class="page-intro">A small archive of posts about the website and engineering work.</p>
+  </div>
+</header>
+<section class="section">
+  <div class="shell narrow post-list">
+    {% for post in site.posts %}
+      <article class="post-summary">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_string }}</time>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt | strip_html }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
